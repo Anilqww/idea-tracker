@@ -130,7 +130,7 @@ const loading = ref(true)
 const measureContainer = ref(null)
 const wordPositions = ref([])
 
-const API_URL = 'http://localhost:5000/api'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
 
 const getAuthHeaders = () => ({
   headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }

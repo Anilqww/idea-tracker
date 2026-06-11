@@ -13,7 +13,7 @@ const snackbar = ref(null)
 const loading = ref(true)
 const editingIdea = ref(null)
 
-const API_URL = 'http://localhost:5000/api'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
 
 const getAuthHeaders = () => ({
   headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }

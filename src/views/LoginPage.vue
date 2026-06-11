@@ -7,6 +7,8 @@ const password = ref('')
 const error = ref('')
 const loading = ref(false)
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+
 const login = async () => {
   if (!email.value || !password.value) {
     error.value = 'Заполните все поля'
@@ -17,7 +19,7 @@ const login = async () => {
   error.value = ''
 
   try {
-    const response = await axios.post('http://localhost:5000/api/auth/login', {
+    const response = await axios.post(`${API_URL}/auth/login`, {
       email: email.value,
       password: password.value
     })
