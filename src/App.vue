@@ -117,7 +117,7 @@ body {
 .logo-img { height: 60px; width: auto; }
 
 .burger-btn { 
-  display: none;
+  display: flex; 
   flex-direction: column; 
   gap: 5px; 
   background: none; 
@@ -226,16 +226,7 @@ body {
 .footer-logo { font-size: 1.5rem; font-weight: 600; color: #ff9a44; margin-bottom: 2px; line-height: 1; }
 .footer-desc { color: #5a4a3a; font-size: 0.9rem; font-weight: 700; margin: 0; opacity: 0.8; }
 
-/* ========== МОБИЛЬНАЯ ВЕРСИЯ ========== */
 @media (max-width: 768px) {
-  .burger-btn {
-    display: flex;
-  }
-  
-  .logo-img {
-    height: 45px;
-  }
-  
   .mobile-menu {
     justify-content: flex-end;
   }
@@ -252,6 +243,10 @@ body {
   .mobile-nav-link, .mobile-logout-btn {
     padding: 12px 16px;
     font-size: 1rem;
+  }
+  
+  .logo-img {
+    height: 45px;
   }
 }
 </style>
