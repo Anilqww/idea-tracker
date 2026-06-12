@@ -90,21 +90,21 @@
           </div>
         </div>
 
-        <div class="ideas-grid">
-          <IdeaCard
-            v-for="idea in filteredIdeas"
-            :key="idea.id"
-            :idea="idea"
-            :index="-1"
-            :statusText="getStatusText(idea.status)"
-            :currentUser="currentUser"
-            :hasVoted="userVotes.includes(idea.id)"
-            :canVote="true"
-            :manageMode="false"
-            @vote="vote"
-            @unvote="unvote"
-          />
-        </div>
+<div class="ideas-grid">
+  <IdeaCard
+    v-for="idea in filteredIdeas"
+    :key="idea.id"
+    :idea="idea"
+    :index="-1"
+    :statusText="getStatusText(idea.status)"
+    :currentUser="currentUser"
+    :hasVoted="userVotes.includes(idea.id)"
+    :canVote="idea.status === 'idea'"
+    :manageMode="false"
+    @vote="vote"
+    @unvote="unvote"
+  />
+</div>
 
         <div v-if="!loading && filteredIdeas.length === 0" class="empty-state">
           <p>Ничего не найдено</p>
